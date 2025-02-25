@@ -1,0 +1,48 @@
+# Build
+dist
+dist-ssr
+
+# Core dumps
+core.*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+.idea
+*.njsproj
+*.ntvs*
+*.sln
+*.suo
+*.sw?
+
+# Environment
+.env
+env.py
+
+# Git
+.github/
+.ruff_cache
+
+# Local files
+*.local
+
+# Logs
+logs
+*.log
+
+# Node.js
+lerna-debug.log*
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+db.sqlite3
+
+# Static files
+/staticfiles/
