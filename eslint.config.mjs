@@ -19,6 +19,13 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: '.',
+      },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -27,17 +34,30 @@ export default tseslint.config(
       react,
     },
     settings: {
-      react: { version: '19.0' },
+      react: {
+        version: '19.0',
+        fragment: 'Fragment',
+      },
+      linkComponents: [{ name: 'Link', linkAttribute: 'to' }],
     },
     rules: {
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
       'react-compiler/react-compiler': 'error',
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules,
+      'react/jsx-uses-vars': 'error',
+      'react/jsx-curly-brace-presence': [
+        'error',
+        { props: 'never', children: 'never' },
+      ],
+      'react/self-closing-comp': ['error', { component: true, html: true }],
+      'react/jsx-no-useless-fragment': 'error',
+      'react/jsx-no-leaked-render': 'error',
+      'react/no-unstable-nested-components': 'warn',
     },
   },
 );
