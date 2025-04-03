@@ -1,22 +1,20 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { ColorMode, ColorModeValue } from '@/types/hooks';
 
-export type ColorMode = 'light' | 'dark';
+export const ColorModeContext = createContext<ColorModeValue | undefined>(
+  undefined,
+);
 
-export interface ColorModeValue {
-  colorMode: ColorMode;
-  toggleColorMode: () => void;
-}
-
-export const ColorMode = createContext<ColorModeValue | undefined>(undefined);
-
+// Hook to access the color mode context
 export function useColorMode() {
-  const context = useContext(ColorMode);
+  const context = useContext(ColorModeContext);
   if (context === undefined) {
     throw new Error('useColorMode must be used within a ColorModeProvider');
   }
   return context;
 }
 
+// Hook to manage the color mode state
 export function useColorModeState() {
   const [colorMode, setColorMode] = useState<ColorMode>(() => {
     const savedMode = localStorage.getItem('colorMode') as ColorMode;
@@ -27,6 +25,7 @@ export function useColorModeState() {
       : 'light';
   });
 
+  // Function to toggle between light and dark modes
   const toggleColorMode = () => {
     setColorMode((prevMode) => {
       const newMode = prevMode === 'light' ? 'dark' : 'light';
@@ -35,6 +34,7 @@ export function useColorModeState() {
     });
   };
 
+  // Update the document's data-theme attribute when color mode changes
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', colorMode);
   }, [colorMode]);

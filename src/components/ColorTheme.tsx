@@ -1,19 +1,23 @@
 import { ReactNode } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 import {
-  ColorMode,
+  ColorModeContext,
   useColorMode,
   useColorModeState,
 } from '@/hooks/useColorTheme';
 
+// Provides the color mode context to child components
 export function ColorModeProvider({ children }: { children: ReactNode }) {
   const colorModeState = useColorModeState();
 
   return (
-    <ColorMode.Provider value={colorModeState}>{children}</ColorMode.Provider>
+    <ColorModeContext.Provider value={colorModeState}>
+      {children}
+    </ColorModeContext.Provider>
   );
 }
 
+// Button to toggle between light and dark modes
 export function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
 
