@@ -17,8 +17,8 @@
 
 [data-theme='dark'] {
   --primary-color: #e2e2e2;
-  --secondary-color: #242424;
-  --background-color: var(--secondary-color);
+  --secondary-color: #2c2c2c;
+  --background-color: #242424;
   --text-color: var(--primary-color);
   --button-bg-color: var(--secondary-color);
   --theme-toggle-bg: #3a3a3a;
@@ -40,13 +40,13 @@ body {
 
 button {
   border-radius: 10px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background-color: var(--button-bg-color);
   color: var(--text-color);
   cursor: pointer;
   transition:
-    border-color 0.3s,
-    background-color 0.3s;
+    border-color 0.2s,
+    background-color 0.2s;
 }
 
 button:hover {
