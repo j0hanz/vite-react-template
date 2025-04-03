@@ -1,6 +1,10 @@
 import { ReactNode } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { ColorMode, useColorMode, useColorModeState } from '@/hooks/usetheme';
+import {
+  ColorMode,
+  useColorMode,
+  useColorModeState,
+} from '@/hooks/useColorTheme';
 
 export function ColorModeProvider({ children }: { children: ReactNode }) {
   const colorModeState = useColorModeState();
