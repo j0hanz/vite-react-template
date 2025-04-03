@@ -1,10 +1,11 @@
 :root {
   --primary-color: #242424;
+  --button-border-color: #666666;
   --secondary-color: #e2e2e2;
   --background-color: #cecece;
   --text-color: #213547;
   --button-bg-color: var(--primary-color);
-  --theme-toggle-bg: var(--secondary-color);
+  --theme-toggle-bg: var(--background-color);
   --theme-toggle-color: var(--primary-color);
   --card-outline-color: var(--primary-color);
   --card-bg-color: var(--secondary-color);
@@ -17,11 +18,12 @@
 
 [data-theme='dark'] {
   --primary-color: #e2e2e2;
+  --button-border-color: #a3a3a3;
   --secondary-color: #2c2c2c;
   --background-color: #242424;
   --text-color: var(--primary-color);
   --button-bg-color: var(--secondary-color);
-  --theme-toggle-bg: #3a3a3a;
+  --theme-toggle-bg: var(--background-color);
   --theme-toggle-color: var(--primary-color);
   --card-outline-color: var(--primary-color);
   --card-bg-color: var(--secondary-color);
@@ -39,18 +41,16 @@ body {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px solid transparent;
   background-color: var(--button-bg-color);
   color: var(--text-color);
   cursor: pointer;
-  transition:
-    border-color 0.2s,
-    background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  border-color: var(--primary-color);
+  border-color: var(--button-border-color);
 }
 
 .theme-toggle {
