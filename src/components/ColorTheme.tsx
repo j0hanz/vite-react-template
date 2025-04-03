@@ -25,7 +25,7 @@ export function ColorModeToggle() {
       aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
       className="theme-toggle"
     >
-      {isLightMode ? <FiMoon size={25} /> : <FiSun size={25} />}
+      {isLightMode ? <FiMoon size={20} /> : <FiSun size={20} />}
     </button>
   );
 }

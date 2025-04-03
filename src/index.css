@@ -41,7 +41,7 @@ body {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 10px;
   border: 2px solid transparent;
   background-color: var(--button-bg-color);
   color: var(--text-color);
