@@ -28,7 +28,7 @@ For production apps, enable type-aware linting:
    import react from 'eslint-plugin-react';
 
    export default tseslint.config({
-     settings: { react: { version: '18.3' } },
+     settings: { react: { version: '19' } },
      plugins: { react },
      rules: {
        ...react.configs.recommended.rules,
