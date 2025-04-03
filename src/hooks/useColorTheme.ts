@@ -17,7 +17,6 @@ export function useColorMode() {
   return context;
 }
 
-// Rename this function to follow React Hook naming conventions
 export function useColorModeState() {
   const [colorMode, setColorMode] = useState<ColorMode>(() => {
     const savedMode = localStorage.getItem('colorMode') as ColorMode;
