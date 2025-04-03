@@ -1,14 +1,19 @@
-import { useState } from 'react';
-import './App.css';
+import { ColorModeToggle } from '@components/theme';
+import { useColorMode } from '@/hooks/theme';
+import styles from './App.module.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { colorMode } = useColorMode();
 
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <main className={styles.appCard}>
+        <h1>Vite + React</h1>
+        <div className={styles.themeContainer}>
+          Current theme: {colorMode}
+          <ColorModeToggle />
+        </div>
+      </main>
     </>
   );
 }
