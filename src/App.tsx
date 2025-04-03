@@ -1,5 +1,5 @@
 import { ColorModeToggle } from '@components/theme';
-import { useColorMode } from '@/hooks/theme';
+import { useColorMode } from '@/hooks/usetheme';
 import styles from './App.module.css';
 
 function App() {
