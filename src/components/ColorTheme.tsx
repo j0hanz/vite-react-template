@@ -17,14 +17,15 @@ export function ColorModeProvider({ children }: { children: ReactNode }) {
 // Button to toggle between light and dark modes
 export function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const isLightMode = colorMode === 'light';
 
   return (
     <button
       onClick={toggleColorMode}
-      aria-label={`Switch to ${colorMode === 'light' ? 'dark' : 'light'} mode`}
+      aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
       className="theme-toggle"
     >
-      {colorMode === 'light' ? <FiMoon size={25} /> : <FiSun size={25} />}
+      {isLightMode ? <FiMoon size={25} /> : <FiSun size={25} />}
     </button>
   );
 }

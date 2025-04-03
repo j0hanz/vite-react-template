@@ -1,11 +1,13 @@
 :root {
   --primary-color: #242424;
+  --secondary-color: #e2e2e2;
   --background-color: #cecece;
   --text-color: #213547;
-  --button-bg-color: #213547;
-  --theme-toggle-bg: #ffffff;
-  --theme-toggle-color: #213547;
-  --card-outline-color: #5214ff;
+  --button-bg-color: var(--primary-color);
+  --theme-toggle-bg: var(--secondary-color);
+  --theme-toggle-color: var(--primary-color);
+  --card-outline-color: var(--primary-color);
+  --card-bg-color: var(--secondary-color);
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,20 +17,23 @@
 
 [data-theme='dark'] {
   --primary-color: #e2e2e2;
-  --background-color: #242424;
-  --text-color: #e2e2e2;
-  --button-bg-color: #1a1a1a;
+  --secondary-color: #242424;
+  --background-color: var(--secondary-color);
+  --text-color: var(--primary-color);
+  --button-bg-color: var(--secondary-color);
   --theme-toggle-bg: #3a3a3a;
-  --theme-toggle-color: #e0e0e0;
+  --theme-toggle-color: var(--primary-color);
+  --card-outline-color: var(--primary-color);
+  --card-bg-color: var(--secondary-color);
 }
 
 body {
   margin: 0;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
   background-color: var(--background-color);
   color: var(--text-color);
 }
