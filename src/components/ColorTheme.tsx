@@ -1,10 +1,7 @@
 import { ReactNode } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import {
-  ColorModeContext,
-  useColorMode,
-  useColorModeState,
-} from '@/hooks/useColorTheme';
+import { useColorMode, useColorModeState } from '@/hooks/useColorTheme';
+import { ColorModeContext } from '@/contexts/ColorModeContext';
 
 // Provides the color mode context to child components
 export function ColorModeProvider({ children }: { children: ReactNode }) {

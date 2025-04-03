@@ -1,9 +1,6 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import { ColorMode, ColorModeValue } from '@/types/hooks';
-
-export const ColorModeContext = createContext<ColorModeValue | undefined>(
-  undefined,
-);
+import { useContext, useState, useEffect } from 'react';
+import { ColorMode } from '@/types/hooks';
+import { ColorModeContext } from '@/contexts/ColorModeContext';
 
 // Hook to access the color mode context
 export function useColorMode() {
