@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { ColorMode } from '@/types/hooks';
+import type { ColorMode } from '@/types/hooks';
 import { ColorModeContext } from '@/contexts/ColorModeContext';
 
 // Get initial color mode

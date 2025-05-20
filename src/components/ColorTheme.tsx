@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import { FiMoon, FiSun } from 'react-icons/fi';
+import type { ReactNode } from 'react';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import { useColorMode, useColorModeState } from '@/hooks/useColorTheme';
 import { ColorModeContext } from '@/contexts/ColorModeContext';
 
@@ -25,7 +26,7 @@ export function ColorModeToggle() {
       aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
       className="theme-toggle"
     >
-      {isLightMode ? <FiMoon size={20} /> : <FiSun size={20} />}
+      {isLightMode ? <DarkModeIcon fontSize='small' /> : <LightModeIcon fontSize='small' />}
     </button>
   );
 }
