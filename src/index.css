@@ -29,6 +29,7 @@ body {
   margin: 0;
   height: 100dvh;
   display: flex;
+  font-family: 'Roboto';
   flex-direction: column;
   align-items: center;
   justify-content: center;
